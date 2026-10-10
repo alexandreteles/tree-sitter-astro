@@ -1,0 +1,16 @@
+  astro:
+      1. ✓ frontmatter_fences
+      2. ✓ inline_frontmatter_assertion
+      3. ✓ raw_boundaries
+      4. ✓ optional_end_tags
+      5. ✓ void_elements
+      6. ✓ unquoted_urls
+      7. ✓ callback_ownership
+      8. ✓ shorthand_ownership
+      9. ✓ return_fragment_asi
+     10. ✓ return_value_asi
+     11. ✓ cdata_and_prose
+     12. ✓ case_sensitive_tags
+
+Total parses: 12; successful parses: 12; failed parses: 0; success percentage: 100.00%; average speed: 4137 bytes/ms
+

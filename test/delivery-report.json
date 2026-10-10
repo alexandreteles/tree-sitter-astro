@@ -1,0 +1,354 @@
+{
+  "cli": "tree-sitter 0.27.1",
+  "syntax_fixtures": 7,
+  "structural_assertions": 14,
+  "invalid_inputs_rejected": 3,
+  "scanner_limit_assertions": 4,
+  "repository": {
+    "head": "9152a930d252f14c7d963f96698de6e94b7092db",
+    "dirty": true,
+    "files": [
+      {
+        "path": "src/components/Icon.astro",
+        "bytes": 1407,
+        "git_blob_sha1": "6efcee71d3e2a4715137c715dc19c6bf0c13e06d",
+        "parsed": true
+      },
+      {
+        "path": "src/components/OptimizedImage.astro",
+        "bytes": 1588,
+        "git_blob_sha1": "3878269d27d71e44b1bc12c24b9300e534ea8ba4",
+        "parsed": true
+      },
+      {
+        "path": "src/components/SearchModal.astro",
+        "bytes": 4983,
+        "git_blob_sha1": "c7143371c8a29f4c12ed92a9d8edf91b264a174c",
+        "parsed": true
+      },
+      {
+        "path": "src/components/courses/CourseCatalogPage.astro",
+        "bytes": 2760,
+        "git_blob_sha1": "9cd13d5843c3a163b94ce91853448edc5de68ebc",
+        "parsed": true
+      },
+      {
+        "path": "src/components/courses/CourseDetailPage.astro",
+        "bytes": 3318,
+        "git_blob_sha1": "d86b4ddbb19db068cb20b1d0a7fbd58e4c8bee30",
+        "parsed": true
+      },
+      {
+        "path": "src/components/courses/CourseDirectory.astro",
+        "bytes": 6589,
+        "git_blob_sha1": "812d7f2076c17d3a72e518af259eb8c3d6ac5932",
+        "parsed": true
+      },
+      {
+        "path": "src/components/home/DispatchList.astro",
+        "bytes": 1974,
+        "git_blob_sha1": "1e10fd67bcd849edf1814f226c877c97985f7ef9",
+        "parsed": true
+      },
+      {
+        "path": "src/components/home/EditorialCards.astro",
+        "bytes": 5687,
+        "git_blob_sha1": "589a4b5175f7c9afcd13b4177fab093ffc834247",
+        "parsed": true
+      },
+      {
+        "path": "src/components/home/HeroSection.astro",
+        "bytes": 2550,
+        "git_blob_sha1": "5c44aa3cae1eda83b03c50abdc08cae4b02486fb",
+        "parsed": true
+      },
+      {
+        "path": "src/components/home/HomePage.astro",
+        "bytes": 3151,
+        "git_blob_sha1": "c170a03783e3b49b449c481dfc0d60a39729c659",
+        "parsed": true
+      },
+      {
+        "path": "src/components/home/HomeShell.astro",
+        "bytes": 9088,
+        "git_blob_sha1": "b05f4f47830a03ab0c3e34e844b9ad0dbad343e5",
+        "parsed": true
+      },
+      {
+        "path": "src/components/home/MissionSection.astro",
+        "bytes": 562,
+        "git_blob_sha1": "8ca31b72858fb5e334fad770539fbe56729f4307",
+        "parsed": true
+      },
+      {
+        "path": "src/components/home/ServiceCards.astro",
+        "bytes": 1046,
+        "git_blob_sha1": "1df18b38bb7f9ba97b6b347802db2b9c6fe834ac",
+        "parsed": true
+      },
+      {
+        "path": "src/components/home/SiteShell.astro",
+        "bytes": 618,
+        "git_blob_sha1": "9b09c461e24188b107d7041654531e9b49f13dfb",
+        "parsed": true
+      },
+      {
+        "path": "src/components/institutional/InstitutionalContactMap.astro",
+        "bytes": 4635,
+        "git_blob_sha1": "91bb8cf21df3d4ca7e0230c972c9d69d024e805c",
+        "parsed": true
+      },
+      {
+        "path": "src/components/institutional/InstitutionalHeroCarousel.astro",
+        "bytes": 4899,
+        "git_blob_sha1": "2a7876e669eb3da7ce3fc6754d44893c68d240b1",
+        "parsed": true
+      },
+      {
+        "path": "src/components/institutional/InstitutionalPage.astro",
+        "bytes": 4592,
+        "git_blob_sha1": "439743d4202a7d5e60ec8635286deb1cdc619f2c",
+        "parsed": true
+      },
+      {
+        "path": "src/components/network/NetworkCard.astro",
+        "bytes": 2911,
+        "git_blob_sha1": "8c9eb24eb72c6d8728430e9826346bd2fda1599c",
+        "parsed": true
+      },
+      {
+        "path": "src/components/network/NetworkDirectory.astro",
+        "bytes": 16191,
+        "git_blob_sha1": "750ae0c9e6f08d50f5a176d181a3b2da6cbf7bbd",
+        "parsed": true
+      },
+      {
+        "path": "src/components/network/NetworkEntityPage.astro",
+        "bytes": 4582,
+        "git_blob_sha1": "962e9a0c973e2ad0cbe3e876c97e1685f4a0fcbd",
+        "parsed": true
+      },
+      {
+        "path": "src/components/network/NetworkHero.astro",
+        "bytes": 1466,
+        "git_blob_sha1": "2c150512a4a5d9caa06dc1061b792626b3054844",
+        "parsed": true
+      },
+      {
+        "path": "src/components/network/NetworkPage.astro",
+        "bytes": 3555,
+        "git_blob_sha1": "22f2585196cffb9270c9c8bde3a7cfbd22b6d1d8",
+        "parsed": true
+      },
+      {
+        "path": "src/components/news/NewsArchivePage.astro",
+        "bytes": 3113,
+        "git_blob_sha1": "711e2354019e2d95d52d73efe1f5245d87354ca0",
+        "parsed": true
+      },
+      {
+        "path": "src/components/news/NewsArticlePage.astro",
+        "bytes": 5595,
+        "git_blob_sha1": "988dc85a0f57884b99a002342ed75a3ad5ce61ad",
+        "parsed": true
+      },
+      {
+        "path": "src/components/news/NewsCard.astro",
+        "bytes": 2275,
+        "git_blob_sha1": "c228911acfd5f00a02cea882a0b56f1851a63712",
+        "parsed": true
+      },
+      {
+        "path": "src/components/news/NewsMdxImage.astro",
+        "bytes": 2633,
+        "git_blob_sha1": "bb296b4e0e83106e53eb3f5d80fb777b61a75a07",
+        "parsed": true
+      },
+      {
+        "path": "src/components/news/NewsMdxParagraph.astro",
+        "bytes": 287,
+        "git_blob_sha1": "078cc580de460438901d9fb61c763d5d01ddd049",
+        "parsed": true
+      },
+      {
+        "path": "src/components/news/NewsPagination.astro",
+        "bytes": 1790,
+        "git_blob_sha1": "ce3e2a7dfa892a565e7a248e7ce7bc9d81dcb0a2",
+        "parsed": true
+      },
+      {
+        "path": "src/layouts/BaseLayout.astro",
+        "bytes": 1980,
+        "git_blob_sha1": "5ba6f12c3a4e020aaeb54e28eda222f1f2017455",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/cursos/[slug].astro",
+        "bytes": 2429,
+        "git_blob_sha1": "d7bf823c4b0401346eddbbf1ad6465d1af115ab9",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/cursos/index.astro",
+        "bytes": 1339,
+        "git_blob_sha1": "37380467bc21528fd5c8091e3f6ec660e6bbebc3",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/courses/[slug].astro",
+        "bytes": 2444,
+        "git_blob_sha1": "8fa42ad68008001b7a46c1905ff388f2fc8a0422",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/courses/index.astro",
+        "bytes": 1346,
+        "git_blob_sha1": "b98345c57c4bb82c613b2c87e97d39a07f8d11c1",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/index.astro",
+        "bytes": 1590,
+        "git_blob_sha1": "c1c40b5dc8509cc467c725f43f6a5196ef42bd68",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/institutional/index.astro",
+        "bytes": 819,
+        "git_blob_sha1": "6a5b1817f53047fe52b554b8ad983133b89f18b7",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/network/groups/[slug].astro",
+        "bytes": 2568,
+        "git_blob_sha1": "5ffdc72bb77768713ae7e80d664295f14644be07",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/network/index.astro",
+        "bytes": 1543,
+        "git_blob_sha1": "d5c121302b9892d9c68b9f4c013395453488c08b",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/network/researchers/[slug].astro",
+        "bytes": 3125,
+        "git_blob_sha1": "0f07ae0c0588ef33227765f969069a2a18e2c164",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/news/[slug].astro",
+        "bytes": 2280,
+        "git_blob_sha1": "bb944575da030432c4da90a9dba3c9f88d7cdf09",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/news/index.astro",
+        "bytes": 1276,
+        "git_blob_sha1": "1dc32a977cee5d5888d90cdc9e029d15c6b1c09f",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/en/news/page/[page].astro",
+        "bytes": 1847,
+        "git_blob_sha1": "399d7a58a9cac1aad8512ecac42dd07f0c021676",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/index.astro",
+        "bytes": 1579,
+        "git_blob_sha1": "a62b8d269b0da77e20af02f7ed9e166bfa8e2283",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/institucional/index.astro",
+        "bytes": 807,
+        "git_blob_sha1": "a4b2f01593ee20252a204fda8fd95888d226c0a0",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/noticias/[slug].astro",
+        "bytes": 2268,
+        "git_blob_sha1": "f710c51c4e1f78c9923aa2945e7d703abcef0a81",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/noticias/index.astro",
+        "bytes": 1261,
+        "git_blob_sha1": "90fab3c349c870825965a1d3ff6cad7974db3aa5",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/noticias/page/[page].astro",
+        "bytes": 1832,
+        "git_blob_sha1": "6f508c778bef88903e1f18ab64667c6dfe377957",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/rede/grupos/[slug].astro",
+        "bytes": 2549,
+        "git_blob_sha1": "e15b1f7cbf631a113dbc0919413753218b7fcaf6",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/rede/index.astro",
+        "bytes": 1531,
+        "git_blob_sha1": "26f40f47f19e2814a9f567ffdf4270654e2e46f2",
+        "parsed": true
+      },
+      {
+        "path": "src/pages/rede/pesquisadores/[slug].astro",
+        "bytes": 3108,
+        "git_blob_sha1": "117581d8989139ee0340a00ec9f0d470a16ff173",
+        "parsed": true
+      }
+    ]
+  },
+  "status": "passed",
+  "parser_abi": 15,
+  "corpus_cases_passed": 12,
+  "rust_binding": {
+    "unit_tests_passed": 2,
+    "documentation_tests_passed": 1,
+    "runtime": "tree-sitter 0.27.1"
+  },
+  "query_files_compiled": 3,
+  "injection_selections_checked": 19,
+  "native_c_compilation": {
+    "passed": true,
+    "scanner_flags": "-std=c11 -Wall -Wextra -Werror -pedantic",
+    "shared_library_built": true
+  },
+  "incremental_fuzz": {
+    "passed": true,
+    "command": "tree-sitter fuzz --iterations 50 --edits 3 --rebuild",
+    "corpus_cases": 12,
+    "iterations_per_case": 50,
+    "max_edits": 3,
+    "seed": 4725377908962781487,
+    "exit_code": 0
+  },
+  "regeneration": {
+    "installed_upstream_packages": true,
+    "command": "tree-sitter generate --abi 15 --js-runtime bun",
+    "javascript": "0.25.0",
+    "typescript": "0.23.2",
+    "grammar_json_regeneration_identical": true
+  },
+  "repository_summary": {
+    "astro_files": 49,
+    "bytes": 143366,
+    "private_source_included": false
+  },
+  "source_sha256": {
+    "grammar.js": "ae3c42a454e8733deabfe0e31f60ff14820e05b37f244a070aeb824adca06e63",
+    "src/grammar.json": "d942d0b2ddb748bf5a8658ee5fb22c21652edaab3d632f4502243e7fe45cba2a",
+    "src/parser.c": "3c44f661b807d1d02d70a64e3d71c78684a9348072f5324b7200ed0a60a4b2ad",
+    "src/scanner.c": "8d95ed620a9ddc8ad9e9dc17bcc74650397b9a50fcb056daad28dfef8b151060"
+  },
+  "consumer_checks_not_included": [
+    "website build",
+    "injected script and style syntax",
+    "complete Entanglement adapter, cross-file resolution, and metric calibration"
+  ]
+}

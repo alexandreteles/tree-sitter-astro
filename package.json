@@ -1,0 +1,20 @@
+{
+  "name": "tree-sitter-astro",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Grammar-generation tools for the standalone Astro parser",
+  "license": "MIT",
+  "scripts": {
+    "generate": "tree-sitter generate --abi 15",
+    "test": "cargo test"
+  },
+  "devDependencies": {
+    "tree-sitter-javascript": "0.25.0",
+    "tree-sitter-typescript": "0.23.2"
+  },
+  "overrides": {
+    "tree-sitter-typescript": {
+      "tree-sitter-javascript": "0.25.0"
+    }
+  }
+}

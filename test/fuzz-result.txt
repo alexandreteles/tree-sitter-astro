@@ -1,0 +1,14 @@
+fuzz seed: 4725377908962781487
+
+  0. astro - corpus - astro - frontmatter_fences
+  1. astro - corpus - astro - inline_frontmatter_assertion
+  2. astro - corpus - astro - raw_boundaries
+  3. astro - corpus - astro - optional_end_tags
+  4. astro - corpus - astro - void_elements
+  5. astro - corpus - astro - unquoted_urls
+  6. astro - corpus - astro - callback_ownership
+  7. astro - corpus - astro - shorthand_ownership
+  8. astro - corpus - astro - return_fragment_asi
+  9. astro - corpus - astro - return_value_asi
+  10. astro - corpus - astro - cdata_and_prose
+  11. astro - corpus - astro - case_sensitive_tags

@@ -1,0 +1,5 @@
+<Shout><fragment slot="message">{(message: string) => <div>{message}</div>}</fragment></Shout>
+{items.map(({name, ...rest}: Item) => {
+  if (!name) return null;
+  return <Card {name} {...rest} />;
+})}

@@ -1,0 +1,12 @@
+<div is:raw>{not code}<span>{still raw}</span></div>
+<div is:raw={false}>{still raw}</div>
+<div is:rawness={value}>{parsed}</div>
+<div is:raw-value>{parsed}</div>
+<div is:raw@not-a-directive>{parsed}</div>
+<title>{title} with <b>literal</b></title>
+<textarea>{value}<div>literal</div></textarea>
+<math><mrow>{opaque}</mrow></math><p>{parsed}</p>
+<p>Text // not a comment; /* plain text */ stray &amp; Café {name}</p>
+<svg><![CDATA[x { value } < b &]]></svg>
+<!-- HTML comment
+continued -->

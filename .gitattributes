@@ -1,0 +1,2 @@
+# Keep the literal CRLF input in the parser corpus.
+test/corpus/astro.txt -text whitespace=cr-at-eol

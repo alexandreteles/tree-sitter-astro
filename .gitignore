@@ -1,0 +1,10 @@
+/node_modules/
+/target/
+/Cargo.lock
+*.so
+*.dll
+*.dylib
+*.o
+*.pyc
+__pycache__/
+/fuzz/

@@ -1,0 +1,453 @@
+========================================================================
+frontmatter_fences
+========================================================================
+---
+const value = 1
+const template = `literal --- ${value}`
+---
+<p>{value}</p>
+
+---
+
+(program
+  (frontmatter
+    (lexical_declaration
+      (variable_declarator
+        (identifier)
+        (number)))
+    (lexical_declaration
+      (variable_declarator
+        (identifier)
+        (template_string
+          (string_fragment)
+          (template_substitution
+            (identifier))))))
+  (jsx_text)
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_expression
+      (identifier))
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_text))
+
+========================================================================
+inline_frontmatter_assertion
+========================================================================
+--- const value = <number>42; ---<p>{value}</p>
+
+---
+
+(program
+  (frontmatter
+    (lexical_declaration
+      (variable_declarator
+        (identifier)
+        (type_assertion
+          (type_arguments
+            (predefined_type))
+          (number)))))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_expression
+      (identifier))
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_text))
+
+========================================================================
+raw_boundaries
+========================================================================
+<script>const marker = "</scriptx>";</script><style>.x { color: red }</style>
+<div is:raw>{opaque}<span>{still opaque}</span></div><div is:rawness>{parsed}</div>
+
+---
+
+(program
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (raw_text)
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (raw_text)
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name)
+      (jsx_attribute
+        (attribute_name)))
+    (raw_text)
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name)
+      (jsx_attribute
+        (attribute_name)))
+    (jsx_expression
+      (identifier))
+    (jsx_closing_element
+      (tag_name))))
+
+========================================================================
+optional_end_tags
+========================================================================
+<ul><li>one<li>two</ul><p>one<p>two<div>block</div>
+
+---
+
+(program
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_element
+      (jsx_opening_element
+        (tag_name))
+      (jsx_text))
+    (jsx_element
+      (jsx_opening_element
+        (tag_name))
+      (jsx_text))
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_text))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_text))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_text)
+    (jsx_closing_element
+      (tag_name))))
+
+========================================================================
+void_elements
+========================================================================
+<div><input disabled><br><img src=x><hr><span>tail</span></div>
+
+---
+
+(program
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_element
+      (jsx_opening_element
+        (tag_name)
+        (jsx_attribute
+          (attribute_name))))
+    (jsx_element
+      (jsx_opening_element
+        (tag_name)))
+    (jsx_element
+      (jsx_opening_element
+        (tag_name)
+        (jsx_attribute
+          (attribute_name)
+          (unquoted_attribute_value))))
+    (jsx_element
+      (jsx_opening_element
+        (tag_name)))
+    (jsx_element
+      (jsx_opening_element
+        (tag_name))
+      (jsx_text)
+      (jsx_closing_element
+        (tag_name)))
+    (jsx_closing_element
+      (tag_name))))
+
+========================================================================
+unquoted_urls
+========================================================================
+<a href=/about>About</a><img src=/image.png/><a href=https://example.org/a>URL</a>
+
+---
+
+(program
+  (jsx_element
+    (jsx_opening_element
+      (tag_name)
+      (jsx_attribute
+        (attribute_name)
+        (unquoted_attribute_value)))
+    (jsx_text)
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_self_closing_element
+    (tag_name)
+    (jsx_attribute
+      (attribute_name)
+      (unquoted_attribute_value)))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name)
+      (jsx_attribute
+        (attribute_name)
+        (unquoted_attribute_value)))
+    (jsx_text)
+    (jsx_closing_element
+      (tag_name))))
+
+========================================================================
+callback_ownership
+========================================================================
+<List>{rows.map(row => <Card item={row} />)}</List>
+
+---
+
+(program
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_expression
+      (call_expression
+        (member_expression
+          (identifier)
+          (property_identifier))
+        (arguments
+          (arrow_function
+            (identifier)
+            (jsx_self_closing_element
+              (tag_name)
+              (jsx_attribute
+                (attribute_name)
+                (jsx_expression
+                  (identifier))))))))
+    (jsx_closing_element
+      (tag_name))))
+
+========================================================================
+shorthand_ownership
+========================================================================
+<Card {item} {...attrs} empty={} />
+
+---
+
+(program
+  (jsx_self_closing_element
+    (tag_name)
+    (shorthand_attribute
+      (identifier))
+    (spread_attribute
+      (identifier))
+    (jsx_attribute
+      (attribute_name)
+      (jsx_expression))))
+
+========================================================================
+return_fragment_asi
+========================================================================
+{items.map(() => { return <><A /></>; })}
+{items.map(() => { return /* same line */ <><D /></>; })}
+{items.map(() => { return /<>/; })}
+{items.map(() => {
+  return
+  <><B /></>;
+})}
+{items.map(() => {
+  return /* separator
+   */ <><C /></>;
+})}
+
+---
+
+(program
+  (jsx_expression
+    (call_expression
+      (member_expression
+        (identifier)
+        (property_identifier))
+      (arguments
+        (arrow_function
+          (formal_parameters)
+          (statement_block
+            (return_statement
+              (fragment
+                (jsx_self_closing_element
+                  (tag_name)))))))))
+  (jsx_expression
+    (call_expression
+      (member_expression
+        (identifier)
+        (property_identifier))
+      (arguments
+        (arrow_function
+          (formal_parameters)
+          (statement_block
+            (return_statement
+              (comment)
+              (fragment
+                (jsx_self_closing_element
+                  (tag_name)))))))))
+  (jsx_expression
+    (call_expression
+      (member_expression
+        (identifier)
+        (property_identifier))
+      (arguments
+        (arrow_function
+          (formal_parameters)
+          (statement_block
+            (return_statement
+              (regex
+                (regex_pattern))))))))
+  (jsx_expression
+    (call_expression
+      (member_expression
+        (identifier)
+        (property_identifier))
+      (arguments
+        (arrow_function
+          (formal_parameters)
+          (statement_block
+            (return_statement)
+            (expression_statement
+              (fragment
+                (jsx_self_closing_element
+                  (tag_name)))))))))
+  (jsx_expression
+    (call_expression
+      (member_expression
+        (identifier)
+        (property_identifier))
+      (arguments
+        (arrow_function
+          (formal_parameters)
+          (statement_block
+            (return_statement)
+            (comment)
+            (expression_statement
+              (fragment
+                (jsx_self_closing_element
+                  (tag_name))))))))))
+
+========================================================================
+return_value_asi
+========================================================================
+{(() => { return
+ value })()}
+{(() => { return
+ value })()}
+{(() => { return  value })()}
+{(() => { return  value })()}
+
+---
+
+(program
+  (jsx_expression
+    (call_expression
+      (parenthesized_expression
+        (arrow_function
+          (formal_parameters)
+          (statement_block
+            (return_statement)
+            (expression_statement
+              (identifier)))))
+      (arguments)))
+  (jsx_expression
+    (call_expression
+      (parenthesized_expression
+        (arrow_function
+          (formal_parameters)
+          (statement_block
+            (return_statement)
+            (expression_statement
+              (identifier)))))
+      (arguments)))
+  (jsx_expression
+    (call_expression
+      (parenthesized_expression
+        (arrow_function
+          (formal_parameters)
+          (statement_block
+            (return_statement)
+            (expression_statement
+              (identifier)))))
+      (arguments)))
+  (jsx_expression
+    (call_expression
+      (parenthesized_expression
+        (arrow_function
+          (formal_parameters)
+          (statement_block
+            (return_statement)
+            (expression_statement
+              (identifier)))))
+      (arguments))))
+
+========================================================================
+cdata_and_prose
+========================================================================
+<p>Text // not a comment; /* plain text */ stray &amp; Café {name}</p><svg><![CDATA[x { value } < b &]]></svg><!-- HTML comment
+continued -->
+
+---
+
+(program
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_text)
+    (html_character_reference)
+    (jsx_text)
+    (jsx_expression
+      (identifier))
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (cdata)
+    (jsx_closing_element
+      (tag_name)))
+  (html_comment))
+
+========================================================================
+case_sensitive_tags
+========================================================================
+<DIV><p>yes</p></DIV><Meta></Meta><svg><foreignObject><p /></foreignObject></svg>
+
+---
+
+(program
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_element
+      (jsx_opening_element
+        (tag_name))
+      (jsx_text)
+      (jsx_closing_element
+        (tag_name)))
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_closing_element
+      (tag_name)))
+  (jsx_element
+    (jsx_opening_element
+      (tag_name))
+    (jsx_element
+      (jsx_opening_element
+        (tag_name))
+      (jsx_self_closing_element
+        (tag_name))
+      (jsx_closing_element
+        (tag_name)))
+    (jsx_closing_element
+      (tag_name))))
